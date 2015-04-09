@@ -9,7 +9,7 @@
  * @author costinmihaita
  */
 public class RequestData {
-     
+//random bullshit     
    String  Productname ;
 
     public String getProductname() {
