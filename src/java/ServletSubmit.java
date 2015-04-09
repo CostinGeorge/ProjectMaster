@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ProjectRequestProgress;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author PC
+ * @author Mato
  */
-@WebServlet(name = "RequestProgress", urlPatterns = {"/RequestProgress"})
-public class RequestProgress extends HttpServlet {
+@WebServlet(name = "Submit", urlPatterns = {"/Submit"})
+public class ServletSubmit extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class RequestProgress extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RequestProgress</title>");            
+            out.println("<title>Servlet OrderServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RequestProgress at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet OrderServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,7 +60,30 @@ public class RequestProgress extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+     
         processRequest(request, response);
+        
+        ArrayList<Description> arrayPro= new ArrayList<>();
+        String description= request.getParameter("description");
+        
+       
+        Description cust= new Description(description);
+        
+             
+        request.setAttribute("Description", description);
+        
+        arrayPro.add(cust);
+        FileHandler.saveDescription(arrayPro, "testFile.txt");
+       
+        
+    
+   
+        RequestDispatcher dispatcher = request.getRequestDispatcher("OrderJSP.jsp");
+        dispatcher.forward(request, response);//actual forwarding, transfer request responded object
+            
+    
+    
+    
     }
 
     /**
@@ -72,7 +97,28 @@ public class RequestProgress extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+//        
+//        ArrayList<Customer> arrayPro= new ArrayList<>();
+//        String velkost= request.getParameter("size");
+//        
+//       
+//        Customer cust= new Customer(velkost);
+//        
+//             
+//        request.setAttribute("size", velkost);
+//        
+//        arrayPro.add(cust);
+//        FileHandler.saveCust(arrayPro, "testFile.txt");
+//       
+//        
+//    
+//   
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("OrderJSP.jsp");
+//        dispatcher.forward(request, response);//actual forwarding, transfer request responded object
+//            
+//    
+//    
     }
 
     /**
