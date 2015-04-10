@@ -1,3 +1,8 @@
+<html>
+<head>
+<title>Prenos súboru pri safe_mod = On</title>
+</head>
+<body>
 <?php
 
 $uploaddir = "datatest/";
@@ -8,3 +13,4 @@ echo "subor bol uspesne nahrany. ";
 echo "Subor sa nepodarilo nahrat. ";
 }
 
+?>
