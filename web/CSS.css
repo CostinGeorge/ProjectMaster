@@ -1,6 +1,10 @@
 p{text-align: center
     
 }
-name{
+.name{
     font-size: 15em;
 }
+.costi {display: inline}
+
+
+.col{display: table-column}
