@@ -14,10 +14,9 @@
      <style>
         table, th, td {
         border: 1px solid black;}
-
-       col {
-       display: table-column;} 
-</style>
+        col { display: table-column;} 
+    </style>
+   
     <body>
         <table>
              <colgroup>
@@ -28,7 +27,7 @@
            <th>Request Number</th>
            <th>Project Name</th>
            <th>Company Name</th>
-           <th>Status</th>
+           <th>Status</th>ß
          </tr>
           <tr>
            <td>Data from program</td>
