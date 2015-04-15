@@ -137,6 +137,10 @@ body {
         padding-top: 12em;
         
     }
+    
+    .fileUpload{
+        padding-bottom: 17em;
+    }
 }
 
 @media (min-width: 992px) {
