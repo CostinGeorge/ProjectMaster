@@ -78,7 +78,7 @@ public class ServletSubmit extends HttpServlet {
         
     
    
-        RequestDispatcher dispatcher = request.getRequestDispatcher("OrderJSP.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("RequestPending");
         dispatcher.forward(request, response);//actual forwarding, transfer request responded object
             
     
