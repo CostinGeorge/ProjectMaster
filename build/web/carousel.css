@@ -141,6 +141,13 @@ body {
     .fileUpload{
         padding-bottom: 17em;
     }
+    .centralize{
+        
+        padding-top: 3em;
+        padding-left: 34em;
+        padding-bottom: 11em;
+    }
+   
 }
 
 @media (min-width: 992px) {
